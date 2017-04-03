@@ -25,7 +25,9 @@ fi
 
 cd ${PHP_SOURCE_PATH}
 yum install libxml2*
-./configure  --with-mysql --with-curl --enable-fpm
+yum -y install libjpeg-devel libpng-devel libvpx-devel
+
+./configure --with-zlib --with-jpeg-dir --with-png-dir  --with-gd  --enable-mbstring  --with-mysql --with-curl --enable-fpm
 make
 make install
 rm /usr/local/lib/php.ini
