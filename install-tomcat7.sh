@@ -1,4 +1,4 @@
-WNLOAD_DIR="/opt/download"
+DOWNLOAD_DIR="/opt/download"
 SOURCE_DIR="/opt/source"
 CONF_DIR="/opt/conf"
 if [ ! -d "$DOWNLOAD_DIR" ]; then
