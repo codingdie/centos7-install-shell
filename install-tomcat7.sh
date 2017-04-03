@@ -22,7 +22,6 @@ if [ ! -d /opt/${APP_NAME_VERSION} ]; then
 fi
 
 cd /opt/${APP_NAME_VERSION}
-
 rm /opt/conf/tomcat-server.xml
-ln -s conf/server.xml /opt/conf/tomcat-server.xml
-finish
+ln -s /opt/${APP_NAME_VERSION}/conf/server.xml /opt/conf/tomcat-server.xml
+echo 'finish'

@@ -1,4 +1,4 @@
-DIR=/opt/projects/web/php/Ikouqin-Server/application/models/
+DIR=/opt/projects/web/php/QuanMingYuedu/application/models/
 
 for file in `ls ${DIR} | grep '[A-Z]'`
 do
