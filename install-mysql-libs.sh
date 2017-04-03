@@ -10,8 +10,8 @@ fi
 if [ ! -d "$CONF_DIR" ]; then
  mkdir $CONF_DIR;
 fi
-
-NAME="mysql-community-client"
+sh install-mysql-common.sh
+NAME="mysql-community-libs"
 VERSION="5.7.17"
 SYS="x86_64"
 APP_NAME_VERSION="${NAME}-${VERSION}"

@@ -10,8 +10,8 @@ fi
 if [ ! -d "$CONF_DIR" ]; then
  mkdir $CONF_DIR;
 fi
-
-NAME="mysql-community-client"
+yum remove mariadb-libs.x86_64 
+NAME="mysql-community-common"
 VERSION="5.7.17"
 SYS="x86_64"
 APP_NAME_VERSION="${NAME}-${VERSION}"
