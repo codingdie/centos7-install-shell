@@ -1,10 +1,15 @@
 DOWNLOAD_DIR="/opt/download"
 SOURCE_DIR="/opt/source"
+SHELL_DIR=$(cd `dirname $0`; pwd)
+CONF_DIR='/opt/conf'
 if [ ! -d "$DOWNLOAD_DIR" ]; then  
- mkdir $DOWNLOAD_DIR; 
+ mkdir -p $DOWNLOAD_DIR; 
 fi  
 if [ ! -d "$SOURCE_DIR" ]; then
- mkdir $SOURCE_DIR;
+ mkdir -p $SOURCE_DIR;
+fi
+if [ ! -d "$CONF_DIR" ]; then
+ mkdir -p $CONF_DIR;
 fi
 
 VERSION="5.6.30"
@@ -20,7 +25,15 @@ fi
 
 cd ${PHP_SOURCE_PATH}
 yum install libxml2*
-./configure
+./configure  --with-mysql --with-curl --enable-fpm
 make
 make install
-
+rm /usr/local/lib/php.ini
+rm /usr/local/etc/php-fpm.conf
+rm ${CONF_DIR}/php.ini
+rm ${CONF_DIR}/php-fpm.conf
+cp ${SHELL_DIR}/conf/php.ini /usr/local/lib/php.ini
+cp ${SHELL_DIR}/conf/php-fpm.conf /usr/local/etc/php-fpm.conf
+ln -s /usr/local/lib/php.ini ${CONF_DIR}/php.ini
+ln -s /usr/local/etc/php-fpm.conf ${CONF_DIR}/php-fpm.conf
+echo 'finish'
