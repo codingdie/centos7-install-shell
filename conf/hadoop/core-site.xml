@@ -19,7 +19,7 @@
 <configuration>
   <property>
     <name>fs.defaultFS</name>
-    <value>hdfs://03.codingdie.com:9000</value>
+    <value>hdfs://namenode.hadoop.codingdie.com:9000</value>
   </property>
   <property>
     <name>io.file.buffer.size</name>
@@ -27,6 +27,6 @@
   </property>
   <property>
     <name>hadoop.tmp.dir</name>
-    <value>/opt/hadoop-2.8.0/tmp</value>
+    <value>/opt/hadoop-2.8.0/data</value>
   </property>
 </configuration>

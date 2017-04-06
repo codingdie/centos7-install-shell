@@ -17,11 +17,7 @@
 <!-- Site specific YARN configuration properties -->
   <property>
     <name>yarn.resourcemanager.hostname</name>
-    <value>03.codingdie.com</value>
-  </property>
-  <property>
-    <name>yarn.resourcemanager.nodes.include-path</name>
-    <value>${HADOOP_CONF_DIR}/resourcemanager-node.list</value>
+    <value>yarn.hadoop.codingdie.com</value>
   </property>
   <property>
     <name>yarn.nodemanager.resource.memory-mb</name>
