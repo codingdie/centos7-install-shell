@@ -22,6 +22,7 @@ DOWLOAD_URL="http://qcloud.ikouqin.cn/download/${FULL_NAME}.tar.gz"
 if [ ! -d ${APP_SOURCE_PATH}  ]; then
  wget -O ${APP_DOWNLOAD_FILE} -c ${DOWLOAD_URL}
  tar -xvf ${APP_DOWNLOAD_FILE}  -C "/opt"
+ mkdir -p ${APP_SOURCE_PATH}/data
  echo "hadoop2.8 finish installed"
  else
  echo "hadoop2.8 has installed" 
@@ -30,6 +31,7 @@ if  [ ! -n "$HADOOP_HOME" ] ;then
     echo "HADOOP_HOME has not set"
     echo "add blow text into /etc/profile"
     echo "export HADOOP_HOME=${APP_SOURCE_PATH}"
+    echo "export HADOOP_CONF_DIR=${APP_SOURCE_PATH}/etc/hadoop"
     echo "export PATH=\$HADOOP_HOME/bin:\$PATH"
     echo "run source /etc/profile"
 else
