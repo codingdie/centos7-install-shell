@@ -22,16 +22,8 @@
     <value>yarn</value>
   </property>
   <property>
-    <name>mapreduce.jobtracker.http.address</name>
-    <value>03.codingdie.com:9005</value>
-  </property>
-  <property>
-    <name>mapreduce.jobhistory.address</name>
-    <value>03.codingdie.com:9005</value>
-  </property>
-  <property>
-    <name>mapreduce.jobhisroty.webapp.address</name>
-    <value>03.codingdie.com:9006</value>
+    <name>mapreduce.map.memory.mb</name>
+    <value>128</value>
   </property>
 <property>
     <name>mapreduce.jobhisroty.done-dir</name>
@@ -40,10 +32,5 @@
 <property>
     <name>mapreduce.ontermediate-done-dir</name>
     <value>/jobhistory/done_intermediate</value>
-  </property>
-
-<property>
-    <name>mapreduce.job.ubertask.enable</name>
-    <value>true</value>
   </property>
 </configuration>

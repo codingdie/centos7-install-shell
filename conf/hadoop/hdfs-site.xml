@@ -18,23 +18,23 @@
 
 <configuration>
    <property>
-     <name>dfs.namenode.node.dir</name>
-     <value>/opt/hadoop-2.8.0/namenode-data</value>
+     <name>dfs.namenode.name.dir</name>
+     <value>/opt/hadoop-2.8.0/data/namenode</value>
    </property>
    <property>
-     <name>dfs.datanode.node.dir</name>
-     <value>/opt/hadoop-2.8.0/datenade-data</value>
+     <name>dfs.blocksize</name>
+     <value>268435456</value>
    </property>
-    <property>
+   <property>
+     <name>dfs.namenode.handler.count</name>
+     <value>100</value>
+   </property>
+   <property>
+     <name>dfs.datanode.data.dir</name>
+     <value>/opt/hadoop-2.8.0/data/datanode</value>
+   </property>
+   <property>
      <name>dfs.replication</name>
-     <value>1</value>
-   </property>
-  <property>
-     <name>dfs.permissions.superusergroup</name>
-     <value>staff</value>
-   </property>
-  <property>
-     <name>dfs.permissions.enabled</name>
-     <value>false</value>
+     <value>2</value>
    </property>
 </configuration>
