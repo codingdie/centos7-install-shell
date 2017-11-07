@@ -27,13 +27,13 @@ if [ ! -d ${APP_SOURCE_PATH}  ]; then
  else
  echo "JDK8 has installed" 
 fi
+PROFILE="/etc/profile"
 if  [ ! -n "$JAVA_HOME" ] ;then
-    echo "JAVA_HOME has not set"
-    echo "add blow text into /etc/profile"
-    echo "export JAVA_HOME=${APP_SOURCE_PATH}"
-    echo "export PATH=\$JAVA_HOME/bin:\$JAVA_HOME/jre/bin:\$PATH"
-    echo "export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar"
-    echo "run source /etc/profile"
+    echo "export JAVA_HOME=${APP_SOURCE_PATH}">>$PROFILE
+    echo "export PATH=\$JAVA_HOME/bin:\$JAVA_HOME/jre/bin:\$PATH">>$PROFILE
+    echo "export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar">>$PROFILE
+    source $PROFILE
+    echo "JAVA_HOME has set"
 else
     echo "JAVA_HOME has set"
 fi
