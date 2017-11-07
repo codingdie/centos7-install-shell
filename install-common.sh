@@ -1,5 +1,5 @@
-yum install make
-yum install wget
-yum install gcc 
-yum install m4 
-yum install autoconf
+yum -y install make
+yum -yinstall wget
+yum -y install gcc 
+yum -y install m4 
+yum -y install autoconf
