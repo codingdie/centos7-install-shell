@@ -25,3 +25,4 @@ if [ ! -d ${APP_SOURCE_PATH}  ]; then
 else
  echo "${NAME} has installed" 
 fi
+cp conf/zoo.cfg ${APP_SOURCE_PATH}/conf
