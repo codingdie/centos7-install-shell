@@ -12,15 +12,16 @@ if [ ! -d "$CONF_DIR" ]; then
 fi
 
 NAME="kafka"
+SCALA="2.12"
 VERSION="1.0.0"
-FULL_NAME="${NAME}-${VERSION}"
+FULL_NAME="${NAME}_${SCALA}-${VERSION}"
 APP_SOURCE_PATH="/opt/kafka"
 APP_DOWNLOAD_FILE="${DOWNLOAD_DIR}/${FULL_NAME}.tgz"
-DOWLOAD_URL="http://mirror.bit.edu.cn/apache/kafka/1.0.0/kafka-1.0.0-src.tgz"
+DOWLOAD_URL="http://mirrors.tuna.tsinghua.edu.cn/apache/kafka/${VERSION}/${FULL_NAME}.tgz"
 if [ ! -d ${APP_SOURCE_PATH}  ]; then
  wget -O ${APP_DOWNLOAD_FILE} -c ${DOWLOAD_URL}
  tar -zxvf ${APP_DOWNLOAD_FILE}  -C "/opt"
- mv "/opt/${FULL_NAME}-src" ${APP_SOURCE_PATH}
+ mv "/opt/${FULL_NAME}" ${APP_SOURCE_PATH}
  echo "${NAME} finish installed"
 else
  echo "${NAME} has installed" 
