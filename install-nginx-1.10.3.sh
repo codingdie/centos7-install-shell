@@ -25,7 +25,7 @@ fi
 cd ${APP_SOURCE_PATH}
 yum install pcre-devel zlib-devel openssl*
 
-./configure --with-http_stub_status_module --with-http_ssl_module --with-stream
+./configure --with-http_stub_status_module --with-http_ssl_module --with-stream --add-module=/home/codingdie/fastdfs-nginx-module/src
 make
 make install
 rm /usr/sbin/nginx
