@@ -12,11 +12,12 @@ if [ ! -d "$CONF_DIR" ]; then
 fi
 
 NAME="kafka"
+SCALA="2.11"
 VERSION="0.9.0.0"
-FULL_NAME="${NAME}-${VERSION}-src"
+FULL_NAME="${NAME}_${SCALA}-${VERSION}"
 APP_SOURCE_PATH="/opt/kafka"
 APP_DOWNLOAD_FILE="${DOWNLOAD_DIR}/${FULL_NAME}.tgz"
-DOWLOAD_URL="https://archive.apache.org/dist/kafka/${VERSION}/${FULL_NAME}.tgz"
+DOWLOAD_URL="http://archive.apache.org/dist/kafka/${VERSION}/${FULL_NAME}.tgz"
 if [ ! -d ${APP_SOURCE_PATH}  ]; then
  wget -O ${APP_DOWNLOAD_FILE} -c ${DOWLOAD_URL}
  tar -zxvf ${APP_DOWNLOAD_FILE}  -C "/opt"
